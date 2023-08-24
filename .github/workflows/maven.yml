@@ -1,13 +1,13 @@
-name: Build Maven Application on self-hosted VM
+name: Build Maven Application
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "master" ]
 
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
