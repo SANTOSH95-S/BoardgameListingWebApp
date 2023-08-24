@@ -1,13 +1,13 @@
-name: Build Maven Application
+name: Build Maven Application on self-hosted
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "develop" ]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
       run: mvn install 
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
+        name: runner-artifact
         path: target
       
         
